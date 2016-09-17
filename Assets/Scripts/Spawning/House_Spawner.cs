@@ -4,8 +4,9 @@ using System.Collections;
 public class House_Spawner : MonoBehaviour {
 
     [SerializeField]
-    GameObject House;                
-    float spawnTime = .3f;   
+    GameObject House;            
+    [SerializeField]    
+    float spawnTime = 1f;   
     [SerializeField]        
     Transform[] spawnPoints;         
 
