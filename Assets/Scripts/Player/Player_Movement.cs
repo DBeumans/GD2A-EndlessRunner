@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player_Movement : MonoBehaviour {
+public class Player_Movement : InputBehaviour {
 
     [SerializeField]
     float jumpPower = 20f;
@@ -26,13 +26,13 @@ public class Player_Movement : MonoBehaviour {
     {
         CheckKeyStatement();
         CheckRaycast();
-
+        KeyCheck();
     }
 
     void CheckKeyStatement()
     {
         // jump
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (jump)
         {
             if (grounded)
             {
