@@ -32,7 +32,7 @@ public class Player_Movement : InputBehaviour {
     void CheckKeyStatement()
     {
         // jump
-        if (jump)
+        if (jump || controller_jump)
         {
             if (grounded)
             {
