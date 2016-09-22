@@ -69,7 +69,9 @@
     <Compile Include="Assets\Scripts\Inputs\InputBehaviour.cs" />
     <Compile Include="Assets\Scripts\Player\Player_Movement.cs" />
     <Compile Include="Assets\Scripts\Settings\ControllsStatement.cs" />
+    <Compile Include="Assets\Scripts\Spawning\Background_Spawner.cs" />
     <Compile Include="Assets\Scripts\Spawning\House_Spawner.cs" />
+    <Compile Include="Assets\Scripts\Spawning\SpawningBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Animations\Placeholder.txt" />
