@@ -25,29 +25,35 @@ public class InputBehaviour : ControllsStatement {
         serialP.ReadTimeout = 1;
     }
 
+    private void Arduino(string _Input) {
+        switch (_Input)
+        {
+            case "forward":
+                forward = true;
+                break;
+            case "rightRo":
+                rightRo = true;
+                break;
+            case "leftRo":
+                leftRo = true;
+                break;
+            case "right":
+                right = true;
+                break;
+            case "left":
+                left = true;
+                break;
+            case "jump":
+                jump = true;
+                break;
+        }
+    }
+
     public void KeyCheck() {
         if (serialP.IsOpen) {
             try {
-                switch (serialP.ReadByte()) {
-                    case forward:
-                        forward = true;
-                        break;
-                    case rightRo:
-                        rightRo = true;
-                        break;
-                    case leftRo:
-                        leftRo = true;
-                        break;
-                    case right:
-                        right = true;
-                        break;
-                    case left:
-                        left = true;
-                        break;
-                    case jump:
-                        jump = true;
-                        break;
-                }
+                string _Input = serialP.ReadByte().ToString();
+                Arduino(_Input);
             } catch {}
         } else {
             forward = Input.GetKey(Forward);
