@@ -11,14 +11,14 @@ public class Player_Movement : InputBehaviour {
     [SerializeField]
     Transform groundedEnd;
 
-    Rigidbody2D rb2d;
+    Rigidbody2D _rigidBody2D;
 
     bool grounded = false;
 
     // Use this for initialization
     void Start ()
     {
-        rb2d = gameObject.GetComponent<Rigidbody2D>();
+        _rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
     }
 	
 	// Update is called once per frame
@@ -36,8 +36,8 @@ public class Player_Movement : InputBehaviour {
         {
             if (grounded)
             {
-                rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
-                rb2d.AddForce(Vector2.up * jumpPower * 2);
+                _rigidBody2D.velocity = new Vector2(_rigidBody2D.velocity.x, 0);
+                _rigidBody2D.AddForce(Vector2.up * jumpPower * 2);
             }          
         }
     }

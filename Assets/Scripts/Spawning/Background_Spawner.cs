@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class House_Spawner : SpawningBehaviour
-{
+public class Background_Spawner : SpawningBehaviour {
+
     //Object to spawn , its a array so you can spawn different objects of the same type.
     [SerializeField]
-    GameObject[] Houses;
+    GameObject[] Backgrounds;
     //Spawn timer, change the spawn timer to spawn objects faster or slower.
     [SerializeField]
     float spawnTime = 1f;
     //Spawnpoints, where the objects needs to spawn.
-    [SerializeField]        
-    Transform[] spawnPoints;         
+    [SerializeField]
+    Transform[] spawnPoints;
 
     void Start()
     {
@@ -19,6 +19,6 @@ public class House_Spawner : SpawningBehaviour
     }
     void Spawn()
     {
-        ObjectSpawner(Houses, spawnPoints);
+        ObjectSpawner(Backgrounds, spawnPoints);
     }
 }
