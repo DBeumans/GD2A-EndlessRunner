@@ -19,12 +19,12 @@ public class InputBehaviour : ControllsStatement {
     public KeyCode Jump;
 
     private SerialPort serialP = new SerialPort("COM6", 9600);
-
+    
     private void Awake() {
         serialP.Open();
         serialP.ReadTimeout = 1;
     }
-
+    
     private void Arduino(string _Input) {
         switch (_Input)
         {
@@ -50,18 +50,21 @@ public class InputBehaviour : ControllsStatement {
     }
 
     public void KeyCheck() {
+        /*
         if (serialP.IsOpen) {
             try {
                 string _Input = serialP.ReadByte().ToString();
                 Arduino(_Input);
             } catch {}
         } else {
-            forward = Input.GetKey(Forward);
-            rightRo = Input.GetKey(RightRo);
-            leftRo = Input.GetKey(LeftRo);
-            right = Input.GetKey(Right);
-            left = Input.GetKey(Left);
-            jump = Input.GetKey(Jump);
+
         }
+        */
+        forward = Input.GetKey(Forward);
+        rightRo = Input.GetKey(RightRo);
+        leftRo = Input.GetKey(LeftRo);
+        right = Input.GetKey(Right);
+        left = Input.GetKey(Left);
+        jump = Input.GetKey(Jump);
     }
 }

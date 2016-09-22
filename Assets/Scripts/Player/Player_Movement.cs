@@ -14,11 +14,18 @@ public class Player_Movement : InputBehaviour {
     Rigidbody2D _rigidBody2D;
 
     bool grounded = false;
-
+    Player_Movement _playerMovement; // There is a bug that the player_movement script turns off when the game starts, this is to turn it back on again.
     // Use this for initialization
+    void Awake()
+    {
+        _playerMovement = GetComponent<Player_Movement>();
+        _playerMovement.enabled = true;
+    }
     void Start ()
     {
+        
         _rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
+       
     }
 	
 	// Update is called once per frame
@@ -32,7 +39,7 @@ public class Player_Movement : InputBehaviour {
     void CheckKeyStatement()
     {
         // jump
-        if (jump )
+        if (jump)
         {
             if (grounded)
             {
