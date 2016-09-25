@@ -6,7 +6,7 @@ public class ColorBehaviour : MonoBehaviour {
 	[SerializeField]
 	private SpriteRenderer _cSprite;
 	[SerializeField]
-	private String _cString = "white";
+	private string _cString = "white";
 
 	private Color[] _color;
 

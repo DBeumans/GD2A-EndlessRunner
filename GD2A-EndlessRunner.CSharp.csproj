@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Background\InfiniteScroll_Background.cs" />
+    <Compile Include="Assets\Scripts\Background\PauzeBehaviour.cs" />
     <Compile Include="Assets\Scripts\House\House_Movement.cs" />
     <Compile Include="Assets\Scripts\Inputs\ColorBehaviour.cs" />
     <Compile Include="Assets\Scripts\Inputs\InputBehaviour.cs" />
