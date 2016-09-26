@@ -10,6 +10,7 @@ public class InputBehaviour : ControllsStatement {
     public bool right = false;
     public bool left = false;
     public bool jump = false;
+    public bool escapeButton = false;
 
     public KeyCode Forward;
     public KeyCode RightRo;
@@ -17,6 +18,7 @@ public class InputBehaviour : ControllsStatement {
     public KeyCode Right;
     public KeyCode Left;
     public KeyCode Jump;
+    public KeyCode EscapeButton;
 
     private SerialPort serialP = new SerialPort("COM6", 9600);
     
@@ -46,6 +48,9 @@ public class InputBehaviour : ControllsStatement {
             case "jump":
                 jump = true;
                 break;
+            case "escapeButton":
+                escapeButton = true;
+                break;
         }
     }
 
@@ -66,5 +71,6 @@ public class InputBehaviour : ControllsStatement {
         right = Input.GetKey(Right);
         left = Input.GetKey(Left);
         jump = Input.GetKey(Jump);
+        escapeButton = Input.GetKey(EscapeButton);
     }
 }

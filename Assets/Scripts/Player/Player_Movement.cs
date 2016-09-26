@@ -15,6 +15,7 @@ public class Player_Movement : InputBehaviour {
 
     bool grounded = false;
     Player_Movement _playerMovement; // There is a bug that the player_movement script turns off when the game starts, this is to turn it back on again.
+    //The player_movement script on the player turns off because of the arduino sopport, when there is no arduino connected it causes a bug, i dont know how, that the scripts turns off. To prevent it we are turning the script back on.
     // Use this for initialization
     void Awake()
     {
