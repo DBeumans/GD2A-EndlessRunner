@@ -27,7 +27,7 @@ public class ColorBehaviour : MonoBehaviour {
 	}
 
 	//returns the color of this sprite heb ik wat moeite mee
-    String GetColor() {
+    string GetColor() {
 		return _cString;
     }
 
