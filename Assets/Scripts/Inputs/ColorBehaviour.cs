@@ -26,14 +26,10 @@ public class ColorBehaviour : MonoBehaviour {
 		_cSprite.color = new Color(255, 255, 255, 1);
 	}
 
-	void Update () {
-
-	}
-
 	//returns the color of this sprite heb ik wat moeite mee
-    /*SpriteRenderer GetColor() {
-		return _cSprite.color;
-    }*/
+    String GetColor() {
+		return _cString;
+    }
 
 	void SetColor(string newColor, string weather) {
 		switch (weather) {
