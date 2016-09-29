@@ -16,8 +16,9 @@ public class Background_Spawner : SpawningBehaviour {
     void Update()
     {
         spawnTime += Time.deltaTime;
-        if(spawnTime == 5.0f)
+        if(spawnTime >= 5f)
         {
+            spawnTime = 0f;
             Spawn();
         }
     }
