@@ -4,17 +4,17 @@ using System.Collections;
 public class Player_Color : ColorBehaviour {
 
     ColorBehaviour color = new ColorBehaviour();
-    void FixedUpdate() {
-        /*if (player gets a pot) {
+    Pot_Color pot = new Pot_Color();
+    void OnCollisionEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "Pot") {
             //call the color function to set color
-            //color.setColor(pot, color of pod);
+            color.setColor("normal", pot.getColor());
         }
-        if (player hits rain) {
-            //color.setColor(rain, color of player);
+        if (other.gameObject.tag == "Rain") {
+            color.setColor("rain", color.getColor());
         }
-        if (player hits sun beam) {
-            //color.setColor(sun, color of player);
+        if (other.gameObject.tag == "Sun") {
+            color.setColor("sun", color.getColor());
         }        
-        */
     }
 }

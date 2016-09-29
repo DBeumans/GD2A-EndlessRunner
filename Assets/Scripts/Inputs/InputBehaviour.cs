@@ -77,13 +77,13 @@ public class InputBehaviour : ControllsStatement {
         jump = Input.GetKey(Jump);
         escapeButton = Input.GetKey(EscapeButton);
         
-        if (serialP.IsOpen) {
+        /*if (serialP.IsOpen) {
             try {
                 string _Input = serialP.ReadByte().ToString();
                 Arduino(_Input);
             } catch {}
         } else {
 
-        }
+        }*/
     }
 }
