@@ -85,16 +85,5 @@ public class InputBehaviour : ControllsStatement {
         } else {
 
         }
-<<<<<<< HEAD:Assets/Scripts/Behaviour/InputBehaviour.cs
-        */
-        forward = Input.GetKey(Forward);
-        rightRo = Input.GetKey(RightRo);
-        leftRo = Input.GetKey(LeftRo);
-        right = Input.GetKey(Right);
-        left = Input.GetKey(Left);
-        jump = Input.GetKey(Jump);
-        escapeButton = Input.GetKeyDown(EscapeButton);
-=======
->>>>>>> 79c823dd204fc7763503ebdc126beb59d97a711d:Assets/Scripts/Inputs/InputBehaviour.cs
     }
 }
