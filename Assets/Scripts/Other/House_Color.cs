@@ -4,10 +4,11 @@ using System.Collections;
 public class House_Color : ColorBehaviour {
 
     ColorBehaviour color = new ColorBehaviour();
-    void FixedUpdate() {
-        /*if (player hits house) {
+    Player_Color player = new Player_Color();
+    void OnCollisionEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "Player") {
             //call the color function to set color
-            color.setColor("house", "#");
-        }*/
+            color.setColor("house", player.getColor());
+        }
     }
 }
