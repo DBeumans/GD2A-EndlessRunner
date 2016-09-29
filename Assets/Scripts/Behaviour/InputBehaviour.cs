@@ -20,9 +20,22 @@ public class InputBehaviour : ControllsStatement {
     public KeyCode Jump;
     public KeyCode EscapeButton;
 
-    private SerialPort serialP = new SerialPort("COM6", 9600);
+    private bool portSet; 
+    private SerialPort serialP = new SerialPort("COM1" , 9600);
     
     private void Awake() {
+        /*for(float i = 1; i <= 10; i++) {
+            if (!portSet) {
+            serialP = new SerialPort("COM"+i , 9600);
+                if (serialP.IsOpen) {
+                    try {
+                        portSet = true;
+                    } catch {}
+                    } else {
+
+                }
+            }
+        }*/
         serialP.Open();
         serialP.ReadTimeout = 1;
     }
@@ -55,7 +68,15 @@ public class InputBehaviour : ControllsStatement {
     }
 
     public void KeyCheck() {
-        /*
+        
+        forward = Input.GetKey(Forward);
+        rightRo = Input.GetKey(RightRo);
+        leftRo = Input.GetKey(LeftRo);
+        right = Input.GetKey(Right);
+        left = Input.GetKey(Left);
+        jump = Input.GetKey(Jump);
+        escapeButton = Input.GetKey(EscapeButton);
+        
         if (serialP.IsOpen) {
             try {
                 string _Input = serialP.ReadByte().ToString();
@@ -64,6 +85,7 @@ public class InputBehaviour : ControllsStatement {
         } else {
 
         }
+<<<<<<< HEAD:Assets/Scripts/Behaviour/InputBehaviour.cs
         */
         forward = Input.GetKey(Forward);
         rightRo = Input.GetKey(RightRo);
@@ -72,5 +94,7 @@ public class InputBehaviour : ControllsStatement {
         left = Input.GetKey(Left);
         jump = Input.GetKey(Jump);
         escapeButton = Input.GetKeyDown(EscapeButton);
+=======
+>>>>>>> 79c823dd204fc7763503ebdc126beb59d97a711d:Assets/Scripts/Inputs/InputBehaviour.cs
     }
 }

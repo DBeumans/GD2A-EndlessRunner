@@ -76,6 +76,8 @@
     <Compile Include="Assets\Scripts\Behaviour\PauzeBehaviour.cs" />
     <Compile Include="Assets\Scripts\House\House_Movement.cs" />
     <Compile Include="Assets\Scripts\Other\DeathTrigger.cs" />
+    <Compile Include="Assets\Scripts\Other\House_Color.cs" />
+    <Compile Include="Assets\Scripts\Player\Player_Color.cs" />
     <Compile Include="Assets\Scripts\Player\Player_Movement.cs" />
     <Compile Include="Assets\Scripts\Settings\ControllsStatement.cs" />
     <Compile Include="Assets\Scripts\Spawning\Background_Spawner.cs" />
