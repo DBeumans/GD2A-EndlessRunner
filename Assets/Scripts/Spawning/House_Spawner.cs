@@ -8,15 +8,21 @@ public class House_Spawner : SpawningBehaviour
     GameObject[] Houses;
     //Spawn timer, change the spawn timer to spawn objects faster or slower.
     [SerializeField]
-    float spawnTime = 1f;
+    float spawnTime = 0f;
     //Spawnpoints, where the objects needs to spawn.
     [SerializeField]        
-    Transform[] spawnPoints;         
+    Transform[] spawnPoints;
 
-    void Start()
+    void Update()
     {
-        InvokeRepeating("Spawn", spawnTime, spawnTime);
+        spawnTime += Time.deltaTime;
+        if (spawnTime >=5.0f)
+        {
+            spawnTime = 0f;
+            Spawn();
+        }
     }
+
     void Spawn()
     {
         ObjectSpawner(Houses, spawnPoints);

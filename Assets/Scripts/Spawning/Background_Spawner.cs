@@ -13,9 +13,13 @@ public class Background_Spawner : SpawningBehaviour {
     [SerializeField]
     Transform[] spawnPoints;
 
-    void Start()
+    void Update()
     {
-        InvokeRepeating("Spawn", spawnTime, spawnTime);
+        spawnTime += Time.deltaTime;
+        if(spawnTime == 5.0f)
+        {
+            Spawn();
+        }
     }
     void Spawn()
     {

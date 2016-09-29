@@ -8,8 +8,8 @@ public class InfiniteScroll_Background : MonoBehaviour {
 
     void Update()
     {
-        Vector2 offset = new Vector2(Time.time * -ScrollSpeed, 0);
+            Vector2 offset = new Vector2(Time.time * -ScrollSpeed, 0);
 
-        GetComponent<Renderer>().material.mainTextureOffset = offset;
+            GetComponent<Renderer>().material.mainTextureOffset = offset;
     }
 }

@@ -71,6 +71,6 @@ public class InputBehaviour : ControllsStatement {
         right = Input.GetKey(Right);
         left = Input.GetKey(Left);
         jump = Input.GetKey(Jump);
-        escapeButton = Input.GetKey(EscapeButton);
+        escapeButton = Input.GetKeyDown(EscapeButton);
     }
 }
