@@ -10,7 +10,7 @@ public class ColorBehaviour : MonoBehaviour {
 
 	private Color[] _color;
 
-	void Awake () {
+	void Stard () {
 		_color[0] = new Color(255, 0, 0, 1); //red
 		_color[1] = new Color(255, 127.5f, 0, 1);//orange
 		_color[2] = new Color(255, 255, 0 , 1); // yellow
@@ -26,12 +26,11 @@ public class ColorBehaviour : MonoBehaviour {
 		_cSprite.color = new Color(255, 255, 255, 1);
 	}
 
-	//returns the color of this sprite heb ik wat moeite mee
-    string GetColor() {
+    public string getColor() {
 		return _cString;
     }
 
-	void SetColor(string newColor, string weather) {
+	public void setColor(string weather, string newColor) {
 		switch (weather) {
 			case "normal": 
 				switch (newColor) {
@@ -223,6 +222,46 @@ public class ColorBehaviour : MonoBehaviour {
 				}
 				if(random >= 2 && random < 3) {
 					_cSprite.color = _color[0];
+				}
+			break;
+			case "house":
+				switch (newColor) {
+					case "white":
+						_cSprite.color = _color[8];
+						_cString = newColor;
+					break;
+					case "red":
+						_cSprite.color = _color[0];
+						_cString = newColor;
+					break;
+					case "orange": 
+						_cSprite.color = _color[1];
+						_cString = newColor;
+					break;
+					case "yellow":
+						_cSprite.color = _color[2];
+						_cString = newColor;
+					break;
+					case "green":
+						_cSprite.color = _color[3];
+						_cString = newColor;
+					break;
+					case "darkBlue":
+						_cSprite.color = _color[4];
+						_cString = newColor;
+					break;
+					case "lightBlue":
+						_cSprite.color = _color[5];
+						_cString = newColor;
+					break;
+					case "pink":
+						_cSprite.color = _color[6];
+						_cString = newColor;
+					break;
+					case "purple":
+						_cSprite.color = _color[7];
+						_cString = newColor;
+					break;
 				}
 			break;
 		}

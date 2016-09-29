@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Inputs\ColorBehaviour.cs" />
     <Compile Include="Assets\Scripts\Inputs\InputBehaviour.cs" />
     <Compile Include="Assets\Scripts\Other\DeathTrigger.cs" />
+    <Compile Include="Assets\Scripts\Other\House_Color.cs" />
     <Compile Include="Assets\Scripts\Player\Player_Color.cs" />
     <Compile Include="Assets\Scripts\Player\Player_Movement.cs" />
     <Compile Include="Assets\Scripts\Settings\ControllsStatement.cs" />
