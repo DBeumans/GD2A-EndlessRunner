@@ -10,7 +10,7 @@ public class ColorBehaviour : MonoBehaviour {
 
 	private Color[] _color;
 
-	void Stard () {
+	private void Stard () {
 		_color[0] = new Color(255, 0, 0, 1); //red
 		_color[1] = new Color(255, 127.5f, 0, 1);//orange
 		_color[2] = new Color(255, 255, 0 , 1); // yellow
@@ -216,12 +216,18 @@ public class ColorBehaviour : MonoBehaviour {
 				float random = Random.Range(0, 2.9999999f);
 				if(random >= 0 && random < 1) {
 					_cSprite.color = _color[0];
+					_cString = "red";
+					Debug.Log("red");
 				}
 				if(random >= 1 && random < 2) {
-					_cSprite.color = _color[0];
+					_cSprite.color = _color[2];
+					_cString = "yellow";
+					Debug.Log("yellow");
 				}
 				if(random >= 2 && random < 3) {
-					_cSprite.color = _color[0];
+					_cSprite.color = _color[4];
+					_cString = "darkBlue";
+					Debug.Log("darkBlue");
 				}
 			break;
 			case "house":

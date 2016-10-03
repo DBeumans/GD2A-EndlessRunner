@@ -2,19 +2,22 @@ using UnityEngine;
 using System.Collections;
 
 public class Player_Color : ColorBehaviour {
+    private void OnCollisionEnter2D(Collision2D other) {
 
-    ColorBehaviour color = new ColorBehaviour();
-    Pot_Color pot = new Pot_Color();
-    void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Pot") {
+        
+
+        if (other.gameObject.tag == "Pot" ||
+         other.gameObject.tag == "Crate" ||
+         other.gameObject.tag == "Tube") {
+            string pot = other.gameObject.GetComponent<Pot_Color>().getColor();
             //call the color function to set color
-            color.setColor("normal", pot.getColor());
+            base.setColor("normal", pot);
         }
         if (other.gameObject.tag == "Rain") {
-            color.setColor("rain", color.getColor());
+            base.setColor("rain", base.getColor());
         }
         if (other.gameObject.tag == "Sun") {
-            color.setColor("sun", color.getColor());
-        }        
+            base.setColor("sun", base.getColor());
+        }
     }
 }

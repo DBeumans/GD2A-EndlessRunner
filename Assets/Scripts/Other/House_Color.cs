@@ -2,13 +2,11 @@ using UnityEngine;
 using System.Collections;
 
 public class House_Color : ColorBehaviour {
-
-    ColorBehaviour color = new ColorBehaviour();
-    Player_Color player = new Player_Color();
-    void OnCollisionEnter2D(Collision2D other) {
+    private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Player") {
+            Player_Color player = gameObject.GetComponent<Player_Color>();
             //call the color function to set color
-            color.setColor("house", player.getColor());
+            base.setColor("house", player.getColor());
         }
     }
 }
