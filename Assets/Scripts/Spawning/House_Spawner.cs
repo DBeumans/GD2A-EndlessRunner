@@ -13,6 +13,14 @@ public class House_Spawner : SpawningBehaviour
     [SerializeField]        
     Transform[] spawnPoints;
 
+
+    /*
+
+        Object mag pas spawnen wanneer de object ervoor over de spawn trigger point is gegaan.
+        houses moeten een collision hebben om te checken of het eroverheen is of niet.
+
+    */
+
     void Update()
     {
         spawnTime += Time.deltaTime;
