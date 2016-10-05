@@ -58,6 +58,10 @@ public class Player_Movement : InputBehaviour {
         {
             _rigidBody2D.AddForce(Vector2.right * player_speed);
         }
+        if(down)
+        {
+            _rigidBody2D.AddForce(Vector2.down * jumpPower * jumpPower);
+        }
     }
 
     void CheckRaycast()
