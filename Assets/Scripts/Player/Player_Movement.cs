@@ -5,6 +5,8 @@ public class Player_Movement : InputBehaviour {
 
     [SerializeField]
     float jumpPower = 20f;
+    [SerializeField]
+    float player_speed = 10f;
 
     [SerializeField]
     Transform Playertransform;
@@ -48,6 +50,14 @@ public class Player_Movement : InputBehaviour {
                 _rigidBody2D.AddForce(Vector2.up * jumpPower * 2);
             }          
         }
+        if(left)
+        {
+            _rigidBody2D.AddForce(Vector2.left * player_speed);
+        }
+        if(right)
+        {
+            _rigidBody2D.AddForce(Vector2.right * player_speed);
+        }
     }
 
     void CheckRaycast()
@@ -55,5 +65,13 @@ public class Player_Movement : InputBehaviour {
         Debug.DrawLine(this.transform.position, groundedEnd.position, Color.green);
 
         grounded = Physics2D.Linecast(this.transform.position, groundedEnd.position, 1 << LayerMask.NameToLayer("Ground"));
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Player_play_area")
+        {
+            _rigidBody2D.velocity = Vector2.zero;
+        }
     }
 }
