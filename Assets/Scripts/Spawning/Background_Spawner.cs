@@ -11,19 +11,20 @@ public class Background_Spawner : SpawningBehaviour {
     float spawnTime = 1f;
     //Spawnpoints, where the objects needs to spawn.
     [SerializeField]
-    Transform[] spawnPoints;
+    Transform spawnPoints;
+    public bool _spawnable = false;
 
     void Update()
     {
-        spawnTime += Time.deltaTime;
-        if(spawnTime >= 5f)
+        if(_spawnable)
         {
-            spawnTime = 0f;
             Spawn();
         }
     }
+    
     void Spawn()
     {
+        _spawnable = false;
         ObjectSpawner(Backgrounds, spawnPoints);
     }
 }

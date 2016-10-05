@@ -8,33 +8,30 @@ public class House_Spawner : SpawningBehaviour
     GameObject[] Houses;
     //Spawnpoints, where the objects needs to spawn.
     [SerializeField]        
-    Transform[] spawnPoints;
+    Transform spawnPoints;
     public bool _spawnable = false;
+    [SerializeField]
+    Transform[] spawnPointOneTime;
 
-
-    /*
-
-        Object mag pas spawnen wanneer de object ervoor over de spawn trigger point is gegaan.
-        houses moeten een collision hebben om te checken of het eroverheen is of niet.
-
-    */
-
+    void Start()
+    {
+        SpawnOnce();
+    }
     void Update()
     {
-        /*
-        spawnTime += Time.deltaTime;
-        if (spawnTime >=5.0f)
-        {
-            spawnTime = 0f;
-            Spawn();
-        }
-        */
         if(_spawnable)
         {
             Spawn();
         }
     }
-    
+    void SpawnOnce()
+    {
+        for(int i = 0; i < spawnPointOneTime.Length; i++)
+        {
+            ObjectSpawner(Houses, spawnPointOneTime[i]);
+        }
+    }
+
     void Spawn()
     {
         _spawnable = false;
