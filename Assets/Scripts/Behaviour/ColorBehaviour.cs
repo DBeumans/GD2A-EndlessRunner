@@ -212,24 +212,6 @@ public class ColorBehaviour : MonoBehaviour {
 					break;
 				}
 			break;
-			case "pot":
-				float random = Random.Range(0, 2.9999999f);
-				if(random >= 0 && random < 1) {
-					_cSprite.color = _color[0];
-					_cString = "red";
-					Debug.Log("red");
-				}
-				if(random >= 1 && random < 2) {
-					_cSprite.color = _color[2];
-					_cString = "yellow";
-					Debug.Log("yellow");
-				}
-				if(random >= 2 && random < 3) {
-					_cSprite.color = _color[4];
-					_cString = "darkBlue";
-					Debug.Log("darkBlue");
-				}
-			break;
 			case "house":
 				switch (newColor) {
 					case "white":
@@ -267,6 +249,26 @@ public class ColorBehaviour : MonoBehaviour {
 					case "purple":
 						_cSprite.color = _color[7];
 						_cString = newColor;
+					break;
+				}
+			break;
+			default:
+				int random = Random.Range(0, 2);
+				switch (random) {
+					case 0:
+						_cSprite.color = _color[0];
+						_cString = "red";
+						Debug.Log("red");
+					break;
+					case 1:
+						_cSprite.color = _color[2];
+						_cString = "yellow";
+						Debug.Log("yellow");
+					break;
+					case 2:
+						_cSprite.color = _color[4];
+						_cString = "darkBlue";
+						Debug.Log("darkBlue");
 					break;
 				}
 			break;
