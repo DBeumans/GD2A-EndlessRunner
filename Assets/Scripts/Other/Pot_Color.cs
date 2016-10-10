@@ -28,4 +28,8 @@ public class Pot_Color : MonoBehaviour {
 			break;
 		}
     }
+
+    public string getColor() {
+        return _cString;
+    }
 }
