@@ -10,7 +10,7 @@ public class ColorBehaviour : MonoBehaviour {
 
 	private Color[] _color;
 
-	private void Stard () {
+	private void Start () {
 		_color[0] = new Color(255, 0, 0, 1); //red
 		_color[1] = new Color(255, 127.5f, 0, 1);//orange
 		_color[2] = new Color(255, 255, 0 , 1); // yellow

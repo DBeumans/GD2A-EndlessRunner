@@ -8,8 +8,9 @@ public class Pot_Color : MonoBehaviour {
 	[SerializeField]
 	private string _cString = "white";
     
-    private void Stard() {
-        int random = Random.Range(0, 2);
+    private void Start() {
+        int random = Random.Range(0, 3);
+        Debug.Log("random = " + random);
 		switch (random) {
 			case 0:
 				_cSprite.color = new Color(255, 0, 0, 1);
