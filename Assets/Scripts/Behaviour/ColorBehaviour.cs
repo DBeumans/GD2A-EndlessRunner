@@ -138,6 +138,9 @@ public class ColorBehaviour : MonoBehaviour {
 							break;
 						}
 					break;
+					default:
+					Debug.Log("Error ColorBehaviour normal newColor");
+					break;
 				}
 			break;
 			case "rain":
@@ -174,6 +177,9 @@ public class ColorBehaviour : MonoBehaviour {
 						_cSprite.color = _color[6];
 						_cString = "pink";
 					break;
+					default:
+					Debug.Log("Error ColorBehaviour rain _cString");
+					break;
 				}
 			break;
 			case "sun":
@@ -209,6 +215,8 @@ public class ColorBehaviour : MonoBehaviour {
 					case "purple":
 						_cSprite.color = _color[6];
 						_cString = "pink";
+					break;default:
+						Debug.Log("Error ColorBehaviour sun _cString");
 					break;
 				}
 			break;
@@ -250,27 +258,13 @@ public class ColorBehaviour : MonoBehaviour {
 						_cSprite.color = _color[7];
 						_cString = newColor;
 					break;
+					default:
+						Debug.Log("Error ColorBehaviour house newColor");
+					break;
 				}
 			break;
 			default:
-				int random = Random.Range(0, 2);
-				switch (random) {
-					case 0:
-						_cSprite.color = _color[0];
-						_cString = "red";
-						Debug.Log("red");
-					break;
-					case 1:
-						_cSprite.color = _color[2];
-						_cString = "yellow";
-						Debug.Log("yellow");
-					break;
-					case 2:
-						_cSprite.color = _color[4];
-						_cString = "darkBlue";
-						Debug.Log("darkBlue");
-					break;
-				}
+				Debug.Log("Error ColorBehaviour weather");
 			break;
 		}
 	}

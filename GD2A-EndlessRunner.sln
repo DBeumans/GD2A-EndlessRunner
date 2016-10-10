@@ -1,7 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GD2A-EndlessRunner.CSharp", "GD2A-EndlessRunner.CSharp.csproj", "{7609B103-F186-0D5A-0081-906452F9FC07}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{C2C43C9E-5BBE-2A7D-14A3-55BB0781B6A0}") = "GD2A-EndlessRunner", "Assembly-CSharp.csproj", "{8165A937-4FE9-EDA7-8F27-844F7520E69C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7609B103-F186-0D5A-0081-906452F9FC07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7609B103-F186-0D5A-0081-906452F9FC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7609B103-F186-0D5A-0081-906452F9FC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7609B103-F186-0D5A-0081-906452F9FC07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8165A937-4FE9-EDA7-8F27-844F7520E69C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8165A937-4FE9-EDA7-8F27-844F7520E69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8165A937-4FE9-EDA7-8F27-844F7520E69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8165A937-4FE9-EDA7-8F27-844F7520E69C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
