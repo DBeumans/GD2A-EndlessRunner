@@ -3,17 +3,13 @@ using System.Collections;
 
 public class House_Spawner_One_Time : SpawningBehaviour {
 
-    // storage voor houses
-    // random house pakken 
-    // spawnen
-
     [SerializeField]
     GameObject[] Houses;
 
     [SerializeField]
-    Transform[] spawnPoint_1;
+    Transform spawnPoint_1;
     [SerializeField]
-    Transform[] spawnPoint_2;
+    Transform spawnPoint_2;
 
     void Start()
     {
