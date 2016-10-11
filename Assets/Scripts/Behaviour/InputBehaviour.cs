@@ -23,7 +23,7 @@ public class InputBehaviour : ControllsStatement {
     public KeyCode Down;
 
     private bool portSet; 
-    private SerialPort serialP = new SerialPort("COM1" , 9600);
+    private SerialPort serialP = new SerialPort("COM7" , 9600);
     
     private void Awake() {
         /*for(float i = 1; i <= 10; i++) {
@@ -38,9 +38,11 @@ public class InputBehaviour : ControllsStatement {
                 }
             }
         }*/
+        
         serialP.Open();
         serialP.ReadTimeout = 1;
     }
+    
     
     private void Arduino(string _Input) {
         switch (_Input)
@@ -82,14 +84,30 @@ public class InputBehaviour : ControllsStatement {
         jump = Input.GetKey(Jump);
         escapeButton = Input.GetKey(EscapeButton);
         down = Input.GetKey(Down);
-        
-        /*if (serialP.IsOpen) {
+        //if (!serialP.IsOpen) { serialP.Open(); }
+        /*
+        if (serialP.IsOpen) {
             try {
-                string _Input = serialP.ReadByte().ToString();
+                string _Input = serialP.ReadLine().ToString();
                 Arduino(_Input);
-            } catch {}
+                print(_Input);
+            } catch(System.Exception) {}
         } else {
 
-        }*/
+        }
+        */
+
+        
+    }
+    void Update()
+    {
+        int Y;
+        int X;
+        string value = serialP.ReadLine(); //Read the information
+        string[] vec3 = value.Split(',');
+        X = int.Parse(vec3[0]);
+        Y = int.Parse(vec3[1]);
+
+        
     }
 }
