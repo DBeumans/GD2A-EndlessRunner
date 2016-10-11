@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InfiniteScroll_Background : MonoBehaviour {
+public class InfiniteScroll_Background : GameBehaviour {
 
     [SerializeField]
     float ScrollSpeed = 0.1f;

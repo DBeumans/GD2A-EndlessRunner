@@ -9,12 +9,18 @@ public class Player_Color : ColorBehaviour {
             string pot = this.gameObject.GetComponent<Pot_Color>().getColor();
             //call the color function to set color
             base.setColor("normal", pot);
+        } else {
+            Debug.Log("Error Player_Color Pots");
         }
         if (other.gameObject.tag == "Rain") {
             base.setColor("rain", base.getColor());
+        } else {
+            Debug.Log("Error Player_Color rain");
         }
         if (other.gameObject.tag == "Sun") {
             base.setColor("sun", base.getColor());
+        } else {
+            Debug.Log("Error Player_Color sun");
         }
     }
 }

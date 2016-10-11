@@ -2,7 +2,7 @@
 using System.Collections;
 using System.IO.Ports;
 
-public class InputBehaviour : ControllsStatement {
+public class InputBehaviour : GameBehaviour {
     
     public bool forward = false;
     public bool rightRo = false;
@@ -39,8 +39,8 @@ public class InputBehaviour : ControllsStatement {
             }
         }*/
         
-        serialP.Open();
-        serialP.ReadTimeout = 1;
+        //serialP.Open();
+       // serialP.ReadTimeout = 1;
     }
     
     
@@ -99,7 +99,7 @@ public class InputBehaviour : ControllsStatement {
 
         
     }
-    void Update()
+    /*void Update()
     {
         int Y;
         int X;
@@ -109,5 +109,5 @@ public class InputBehaviour : ControllsStatement {
         Y = int.Parse(vec3[1]);
 
         
-    }
+    }*/
 }
