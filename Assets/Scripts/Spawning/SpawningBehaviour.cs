@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpawningBehaviour : GameBehaviour {
+public class SpawningBehaviour : MonoBehaviour {
 
     public void ObjectSpawner(GameObject[] gameObject, Transform spawnPoints)
     {

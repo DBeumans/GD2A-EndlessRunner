@@ -2,7 +2,7 @@
 using System.Collections;
 using System.IO.Ports;
 
-public class InputBehaviour : GameBehaviour {
+public class InputBehaviour : MonoBehaviour {
     
     public bool forward = false;
     public bool rightRo = false;
