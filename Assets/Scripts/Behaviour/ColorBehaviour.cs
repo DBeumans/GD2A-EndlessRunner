@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ColorBehaviour : MonoBehaviour {
-	
+	/*
 	[SerializeField]
 	private SpriteRenderer _cSprite;
 	[SerializeField]
@@ -11,6 +11,7 @@ public class ColorBehaviour : MonoBehaviour {
 	private Color[] _color;
 
 	private void Start () {
+		_color = new Color[9];
 		_color[0] = new Color(255, 0, 0, 1); //red
 		_color[1] = new Color(255, 127.5f, 0, 1);//orange
 		_color[2] = new Color(255, 255, 0 , 1); // yellow
@@ -21,7 +22,6 @@ public class ColorBehaviour : MonoBehaviour {
 		_color[7] = new Color(127.5f, 0, 255, 1);//purple
 		_color[8] = new Color(255, 255, 255, 1);//white
 
-
 		_cSprite = GetComponent<SpriteRenderer>();
 		_cSprite.color = new Color(255, 255, 255, 1);
 	}
@@ -30,242 +30,231 @@ public class ColorBehaviour : MonoBehaviour {
 		return _cString;
     }
 
-	public void setColor(string weather, string newColor) {
-		switch (weather) {
-			case "normal": 
-				switch (newColor) {
-					case "red":
-						switch (_cString) {
-							case "white":
-								_cSprite.color = _color[0];
-								_cString = "red";
-							break;
-							case "orange": 
-								_cSprite.color = _color[0];
-								_cString = "red";
-							break;
-							case "yellow":
-								_cSprite.color = _color[1];
-								_cString = "orange";
-							break;
-							case "green":
-								_cSprite.color = _color[1];
-								_cString = "orange";
-							break;
-							case "darkBlue":
-								_cSprite.color = _color[7];
-								_cString = "purple";
-							break;
-							case "lightBlue":
-								_cSprite.color = _color[6];
-								_cString = "pink";
-							break;
-							case "pink":
-								_cSprite.color = _color[0];
-								_cString = "red";
-							break;
-							case "purple":
-								_cSprite.color = _color[0];
-								_cString = "red";
-							break;
-						}
-					break;
-					case "yellow":
-						switch (_cString) {
-							case "white":
-								_cSprite.color = _color[2];
-								_cString = "yellow";
-							break;
-							case "red":
-								_cSprite.color = _color[1];
-								_cString = "orange";
-							break;
-							case "orange": 
-								_cSprite.color = _color[2];
-								_cString = "yellow";
-							break;
-							case "darkBlue":
-								_cSprite.color = _color[3];
-								_cString = "green";
-							break;
-							case "lightBlue":
-								_cSprite.color = _color[3];
-								_cString = "green";
-							break;
-							case "pink":
-								_cSprite.color = _color[5];
-								_cString = "lightBlue";
-							break;
-							case "purple":
-								_cSprite.color = _color[6];
-								_cString = "pink";
-							break;
-						}
-					break;
-					case "darkBlue":
-						switch (_cString) {
-							case "white":
-								_cSprite.color = _color[4];
-								_cString = "darkBlue";
-							break;
-							case "red":
-								_cSprite.color = _color[7];
-								_cString = "purple";
-							break;
-							case "orange": 
-								_cSprite.color = _color[3];
-								_cString = "green";
-							break;
-							case "yellow":
-								_cSprite.color = _color[3];
-								_cString = "green";
-							break;
-							case "green":
-								_cSprite.color = _color[4];
-								_cString = "darkBlue";
-							break;
-							case "lightBlue":
-								_cSprite.color = _color[4];
-								_cString = "darkBlue";
-							break;
-							case "pink":
-								_cSprite.color = _color[5];
-								_cString = "lightBlue";
-							break;
-							case "purple":
-								_cSprite.color = _color[4];
-								_cString = "darkBlue";
-							break;
-						}
-					break;
-					default:
-					Debug.Log("Error ColorBehaviour normal newColor");
-					break;
-				}
-			break;
-			case "rain":
-				switch (_cString) {
-					case "red":
-						_cSprite.color = _color[1];
-						_cString = "orange";
-					break;
-					case "orange": 
-						_cSprite.color = _color[2];
-						_cString = "yellow";
-					break;
-					case "yellow":
-						_cSprite.color = _color[8];
-						_cString = "white";
-					break;
-					case "green":
-						_cSprite.color = _color[2];
-						_cString = "yellow";
-					break;
-					case "darkBlue":
-						_cSprite.color = _color[5];
-						_cString = "lightBlue";
-					break;
-					case "lightBlue":
-						_cSprite.color = _color[8];
-						_cString = "white";
-					break;
-					case "pink":
-						_cSprite.color = _color[5];
-						_cString = "lightBlue";
-					break;
-					case "purple":
-						_cSprite.color = _color[6];
-						_cString = "pink";
-					break;
-					default:
-					Debug.Log("Error ColorBehaviour rain _cString");
-					break;
-				}
-			break;
-			case "sun":
+	public Color setPlayer(string newColor) {
+		switch (newColor) {
+			case "red":
 				switch (_cString) {
 					case "white":
-						_cSprite.color = _color[2];
-						_cString = "yellow";
-					break;
-					case "red":
-						_cSprite.color = _color[1];
-						_cString = "orange";
+						_cString = "red";
+						return _color[0];
 					break;
 					case "orange": 
-						_cSprite.color = _color[2];
-						_cString = "yellow";
-					break;
-					case "green":
-						_cSprite.color = _color[5];
-						_cString = "lightBlue";
-					break;
-					case "darkBlue":
-						_cSprite.color = _color[6];
-						_cString = "pink";
-					break;
-					case "lightBlue":
-						_cSprite.color = _color[2];
-						_cString = "yellow";
-					break;
-					case "pink":
-						_cSprite.color = _color[2];
-						_cString = "yellow";
-					break;
-					case "purple":
-						_cSprite.color = _color[6];
-						_cString = "pink";
-					break;default:
-						Debug.Log("Error ColorBehaviour sun _cString");
-					break;
-				}
-			break;
-			case "house":
-				switch (newColor) {
-					case "white":
-						_cSprite.color = _color[8];
-						_cString = newColor;
-					break;
-					case "red":
-						_cSprite.color = _color[0];
-						_cString = newColor;
-					break;
-					case "orange": 
-						_cSprite.color = _color[1];
-						_cString = newColor;
+						_cString = "red";
+						return _color[0];
 					break;
 					case "yellow":
-						_cSprite.color = _color[2];
-						_cString = newColor;
+						_cString = "orange";
+						return _color[1];
 					break;
 					case "green":
-						_cSprite.color = _color[3];
-						_cString = newColor;
+						_cString = "orange";
+						return _color[1];
 					break;
 					case "darkBlue":
-						_cSprite.color = _color[4];
-						_cString = newColor;
+						_cString = "purple";
+						return _color[7];
 					break;
 					case "lightBlue":
-						_cSprite.color = _color[5];
-						_cString = newColor;
+						_cString = "pink";
+						return _color[6];
 					break;
 					case "pink":
-						_cSprite.color = _color[6];
-						_cString = newColor;
+						_cString = "red";
+						return _color[0];
 					break;
 					case "purple":
-						_cSprite.color = _color[7];
-						_cString = newColor;
-					break;
-					default:
-						Debug.Log("Error ColorBehaviour house newColor");
+						_cString = "red";
+						return _color[0];
 					break;
 				}
 			break;
-			default:
-				Debug.Log("Error ColorBehaviour weather");
+			case "yellow":
+				switch (_cString) {
+					case "white":
+						_cString = "yellow";
+						return _color[2];
+					break;
+					case "red":
+						_cString = "orange";
+						return _color[1];
+					break;
+					case "orange": 
+						_cString = "yellow";
+						return _color[2];
+					break;
+					case "darkBlue":
+						_cString = "green";
+						return _color[3];
+					break;
+					case "lightBlue":
+						_cString = "green";
+						return _color[3];
+					break;
+					case "pink":
+						_cString = "lightBlue";
+						return _color[5];
+					break;
+					case "purple":
+						_cString = "pink";
+						return _color[6];
+					break;
+				}
+			break;
+			case "darkBlue":
+				switch (_cString) {
+					case "white":
+						_cString = "darkBlue";
+						return _color[4];
+					break;
+					case "red":
+						_cString = "purple";
+						return _color[7];
+					break;
+					case "orange": 
+						_cString = "green";
+						return _color[3];
+					break;
+					case "yellow":
+						_cString = "green";
+						return _color[3];
+					break;
+					case "green":
+						_cString = "darkBlue";
+						return _color[4];
+					break;
+					case "lightBlue":
+						_cString = "darkBlue";
+						return _color[4];
+					break;
+					case "pink":
+						_cString = "lightBlue";
+						return _color[5];
+					break;
+					case "purple":
+						_cString = "darkBlue";
+						return _color[4];
+					break;
+				}
 			break;
 		}
+		return _color[8];
 	}
+
+	public Color setHouse(string newColor) {
+		switch (newColor) {
+			case "white":
+				_cString = newColor;
+				return _color[8];
+			break;
+			case "red":
+				_cString = newColor;
+				return _color[0];
+			break;
+			case "orange": 
+				_cString = newColor;
+				return _color[1];
+			break;
+			case "yellow":
+				_cString = newColor;
+				return _color[2];
+			break;
+			case "green":
+				_cString = newColor;
+				return _color[3];
+			break;
+			case "darkBlue":
+				_cString = newColor;
+				return _color[4];
+			break;
+			case "lightBlue":
+				_cString = newColor;
+				return _color[5];
+			break;
+			case "pink":
+				_cString = newColor;
+				return _color[6];
+			break;
+			case "purple":
+				_cString = newColor;
+				return _color[7];
+			break;
+		}
+		return _color[8];
+	}
+	/* //gebruiken we niet kost teveel tijd
+	public Color addSun() {
+		switch (_cString) {
+			case "white":
+				_cString = "yellow";
+				return _color[2];
+			break;
+			case "red":
+				_cString = "orange";
+				return _color[1];
+			break;
+			case "orange": 
+				_cString = "yellow";
+				return _color[2];
+			break;
+			case "green":
+				_cString = "lightBlue";
+				return _color[5];
+			break;
+			case "darkBlue":
+				_cString = "pink";
+				return _color[6];
+			break;
+			case "lightBlue":
+				_cString = "yellow";
+				return _color[2];
+			break;
+			case "pink":
+				_cString = "yellow";
+				return _color[2];
+			break;
+			case "purple":
+				_cString = "pink";
+				return _color[6];
+			break;
+		}
+		return _color[8];
+	}
+
+	public Color addRain() {
+		switch (_cString) {
+			case "red":
+				_cString = "orange";
+				return _color[1];
+			break;
+			case "orange": 
+				_cString = "yellow";
+				return _color[2];
+			break;
+			case "yellow":
+				_cString = "white";
+				return _color[8];
+			break;
+			case "green":
+				_cString = "yellow";
+				return _color[2];
+			break;
+			case "darkBlue":
+				_cString = "lightBlue";
+				return _color[5];
+			break;
+			case "lightBlue":
+				_cString = "white";
+				return _color[8];
+			break;
+			case "pink":
+				_cString = "lightBlue";
+				return _color[5];
+			break;
+			case "purple":
+				_cString = "pink";
+				return _color[6];
+			break;
+		}
+		return _color[8];
+	}*/
 }
