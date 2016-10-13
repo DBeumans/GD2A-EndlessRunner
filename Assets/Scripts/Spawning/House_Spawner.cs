@@ -25,17 +25,17 @@ public class House_Spawner : SpawningBehaviour
         }
     }
     void SpawnOnce()
-    {
-        for(int i = 0; i < spawnPointOneTime.Length; i++)
+    {        
+        for (int i = 0; i < spawnPointOneTime.Length; i++)
         {
             ObjectSpawner(Houses, spawnPointOneTime[i]);
-        }
+        }    
     }
 
     void Spawn()
     {
         _spawnable = false;
-        ObjectSpawner(Houses, spawnPoints);
+        ObjectSpawner(Houses, spawnPoints);      
     }
 
     void OnTriggerEnter2D(Collider2D other)

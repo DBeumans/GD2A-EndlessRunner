@@ -71,7 +71,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Background\InfiniteScroll_Background.cs" />
     <Compile Include="Assets\Scripts\Behaviour\ColorBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Behaviour\GameBehaviour.cs" />
     <Compile Include="Assets\Scripts\Behaviour\InputBehaviour.cs" />
     <Compile Include="Assets\Scripts\Behaviour\PauzeBehaviour.cs" />
     <Compile Include="Assets\Scripts\House\House_Movement.cs" />
@@ -86,6 +85,7 @@
     <Compile Include="Assets\Scripts\Spawning\House_Spawner_One_Time.cs" />
     <Compile Include="Assets\Scripts\Spawning\SpawningBehaviour.cs" />
     <Compile Include="Assets\Scripts\UI\HideUI.cs" />
+    <Compile Include="Assets\Scripts\UI\Main_Menu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Animations\Placeholder.txt" />
