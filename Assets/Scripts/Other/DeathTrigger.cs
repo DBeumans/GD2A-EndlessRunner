@@ -3,13 +3,20 @@ using System.Collections;
 
 public class DeathTrigger : MonoBehaviour {
 
+    string _this_gameObject_tag;
+
+    void Start()
+    {
+        _this_gameObject_tag = this.gameObject.tag;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer != LayerMask.NameToLayer("Death"))
+        if (_this_gameObject_tag != other.transform.parent.gameObject.tag)
         {
-            Destroy(other.gameObject);
+            Destroy(other.transform.parent.gameObject);
             Debug.Log("Object destoryed!");
-           
         }
+
     }
 }
