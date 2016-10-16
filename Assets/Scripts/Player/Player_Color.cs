@@ -30,7 +30,7 @@ public class Player_Color : MonoBehaviour {
          other.gameObject.tag == "Tube") {
             Pot_Color pot = other.gameObject.GetComponent<Pot_Color>();
             //call the color function to set color
-            Debug.Log(pot.getColor() + " 1");
+           // Debug.Log(pot.getColor() + " 1");
             setColor(pot.getColor());
             Destroy(other.gameObject);
         }
@@ -45,7 +45,7 @@ public class Player_Color : MonoBehaviour {
     }
 
     private void setColor(string newColor) {
-        Debug.Log(newColor + " 2");
+       // Debug.Log(newColor + " 2");
         switch (newColor) {
 			case "red":
 				switch (_cString) {

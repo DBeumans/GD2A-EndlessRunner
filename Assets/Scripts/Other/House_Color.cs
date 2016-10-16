@@ -4,7 +4,9 @@ using System.Collections;
 public class House_Color : MonoBehaviour {
 
     private SpriteRenderer _cSprite;
-	private string _cString = "white";
+    private string _cString = "white";
+
+    Player_Score _player_Score;
     
 	private Color[] _color;
 
@@ -22,19 +24,31 @@ public class House_Color : MonoBehaviour {
 
 		_cSprite = GetComponent<SpriteRenderer>();
 		_cSprite.color = new Color(255, 255, 255, 1);
+
+        _player_Score = GameObject.FindObjectOfType<Player_Score>();
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Player") {
-            Player_Color player = other.gameObject.GetComponent<Player_Color>();
-            //call the color function to set color
-            Debug.Log(player.getColor() + " 1");
-            setColor(player.getColor());
+            if(this.gameObject.tag =="House")
+            {
+                Player_Color player = other.gameObject.GetComponent<Player_Color>();
+                //call the color function to set color
+                // Debug.Log(player.getColor() + " 1");
+                setColor(player.getColor());
+                _player_Score._player_Score++;
+                this.gameObject.tag = "House_Colored";
+
+            }
+            else
+            {
+                // house have other tag and is already colored.
+            }
         }
     }
 
     private void setColor(string newColor) {
-        Debug.Log(newColor + " 2");
+        //Debug.Log(newColor + " 2");
                 switch (newColor) {
 					case "white":
 						_cSprite.color = _color[8];
@@ -43,35 +57,36 @@ public class House_Color : MonoBehaviour {
 					case "red":
 						_cSprite.color = _color[0];
 						_cString = newColor;
-					break;
+                break;
 					case "orange": 
 						_cSprite.color = _color[1];
 						_cString = newColor;
-					break;
+                break;
 					case "yellow":
 						_cSprite.color = _color[2];
 						_cString = newColor;
-					break;
+
+                break;
 					case "green":
 						_cSprite.color = _color[3];
 						_cString = newColor;
-					break;
+                break;
 					case "darkBlue":
 						_cSprite.color = _color[4];
 						_cString = newColor;
-					break;
+                break;
 					case "lightBlue":
 						_cSprite.color = _color[5];
 						_cString = newColor;
-					break;
+                break;
 					case "pink":
 						_cSprite.color = _color[6];
 						_cString = newColor;
-					break;
+                break;
 					case "purple":
 						_cSprite.color = _color[7];
 						_cString = newColor;
-					break;
+                break;
 					default:
 						Debug.Log("Error ColorBehaviour house newColor");
 					break;

@@ -4,9 +4,9 @@ using System.Collections;
 public class Player_Movement : InputBehaviour {
 
     [SerializeField]
-    float jumpPower = 20f;
-    [SerializeField]
-    float player_speed = 10f;
+    float jumpPower = 15f;
+   
+    float player_speed = 3f;
 
     [SerializeField]
     Transform Playertransform;
@@ -41,6 +41,7 @@ public class Player_Movement : InputBehaviour {
 
     void CheckKeyStatement()
     {
+        
         // jump
         if (jump)
         {
@@ -50,6 +51,7 @@ public class Player_Movement : InputBehaviour {
                 _rigidBody2D.AddForce(Vector2.up * jumpPower * 2);
             }          
         }
+        /*
         if(left)
         {
             _rigidBody2D.AddForce(Vector2.left * player_speed);
@@ -61,6 +63,21 @@ public class Player_Movement : InputBehaviour {
         if(down)
         {
             _rigidBody2D.AddForce(Vector2.down * jumpPower * jumpPower);
+        }
+        */
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(Vector2.left * player_speed * Time.deltaTime);
+            transform.eulerAngles = new Vector2(0,180);
+
+        }
+
+        //RIGHT
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(Vector2.left * player_speed * Time.deltaTime);
+            transform.eulerAngles = new Vector2(0, 0);
+
         }
     }
 

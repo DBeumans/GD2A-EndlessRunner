@@ -15,7 +15,6 @@ public class DeathTrigger : MonoBehaviour {
         if (_this_gameObject_tag != other.transform.parent.gameObject.tag)
         {
             Destroy(other.transform.parent.gameObject);
-            Debug.Log("Object destoryed!");
         }
 
     }
