@@ -12,6 +12,9 @@ public class InputBehaviour : MonoBehaviour {
     public bool jump = false;
     public bool escapeButton = false;
     public bool down = false;
+    // Controller
+    public bool controller_up;
+    public bool controller_down;
 
     public KeyCode Forward;
     public KeyCode RightRo;
@@ -21,6 +24,9 @@ public class InputBehaviour : MonoBehaviour {
     public KeyCode Jump;
     public KeyCode EscapeButton;
     public KeyCode Down;
+    // Controller
+    public KeyCode Controller_Up;
+    public KeyCode Controller_Down;
 
     private bool portSet; 
     private SerialPort serialP = new SerialPort("COM7" , 9600);
@@ -84,6 +90,11 @@ public class InputBehaviour : MonoBehaviour {
         jump = Input.GetKey(Jump);
         escapeButton = Input.GetKey(EscapeButton);
         down = Input.GetKey(Down);
+
+        // Controller
+        controller_up = Input.GetKey(Controller_Up);
+        controller_down = Input.GetKey(Controller_Down);
+
         //if (!serialP.IsOpen) { serialP.Open(); }
         /*
         if (serialP.IsOpen) {

@@ -43,7 +43,7 @@ public class Player_Movement : InputBehaviour {
     {
         
         // jump
-        if (jump)
+        if (jump || controller_up)
         {
             if (grounded)
             {
@@ -51,34 +51,11 @@ public class Player_Movement : InputBehaviour {
                 _rigidBody2D.AddForce(Vector2.up * jumpPower * 2);
             }          
         }
-        /*
-        if(left)
+        if(down || controller_down)
         {
-            _rigidBody2D.AddForce(Vector2.left * player_speed);
+            _rigidBody2D.AddForce(-Vector2.up * jumpPower * 2);
         }
-        if(right)
-        {
-            _rigidBody2D.AddForce(Vector2.right * player_speed);
-        }
-        if(down)
-        {
-            _rigidBody2D.AddForce(Vector2.down * jumpPower * jumpPower);
-        }
-        */
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector2.left * player_speed * Time.deltaTime);
-            transform.eulerAngles = new Vector2(0,180);
-
-        }
-
-        //RIGHT
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector2.left * player_speed * Time.deltaTime);
-            transform.eulerAngles = new Vector2(0, 0);
-
-        }
+        
     }
 
     void CheckRaycast()
