@@ -8,6 +8,8 @@ public class Player_Color : MonoBehaviour {
     
 	private Color[] _color;
 
+    AudioManager _audioManager;
+
     private void Start() {
         _color = new Color[9];
         _color[0] = new Color(255, 0, 0, 1); //red
@@ -22,15 +24,18 @@ public class Player_Color : MonoBehaviour {
 
 		_cSprite = GetComponent<SpriteRenderer>();
 		_cSprite.color = new Color(255, 255, 255, 1);
+        _audioManager = GameObject.FindObjectOfType<AudioManager>();
+
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Pot" ||
          other.gameObject.tag == "Crate" ||
          other.gameObject.tag == "Tube") {
+            _audioManager.Play_Pickup_Sound();
             Pot_Color pot = other.gameObject.GetComponent<Pot_Color>();
             //call the color function to set color
-           // Debug.Log(pot.getColor() + " 1");
+            // Debug.Log(pot.getColor() + " 1");
             setColor(pot.getColor());
             Destroy(other.gameObject);
         }
