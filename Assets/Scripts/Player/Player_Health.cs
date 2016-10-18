@@ -4,24 +4,22 @@ using System.Collections;
 public class Player_Health : MonoBehaviour {
 
     public int player_Health;
+    public bool player_alive;
 
     void Start()
     {
         player_Health = 100;
-    }
-    void Update()
-    {
-        if(player_Health <= 0 )
-        {
-            Destroy(this.gameObject);
-        }
+        player_alive = true;
     }
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag=="Death")
         {
             player_Health -= 100;
-            Destroy(gameObject);
+        }
+        if(other.gameObject.tag=="Player_play_area")
+        {
+            player_Health -= 100;
         }
     }
 }

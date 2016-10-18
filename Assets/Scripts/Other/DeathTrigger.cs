@@ -12,8 +12,12 @@ public class DeathTrigger : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (_this_gameObject_tag != other.transform.parent.gameObject.tag)
+        if (_this_gameObject_tag != other.transform.parent.gameObject.tag || _this_gameObject_tag != other.gameObject.tag)
         {
+            if(other.gameObject.tag == "Player")
+            {
+                
+            }
             Destroy(other.transform.parent.gameObject);
         }
 

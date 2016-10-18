@@ -8,10 +8,13 @@ public class Player_UI : MonoBehaviour {
     Player_Health player_health;
 
     int Int_Player_Score;
+    int Int_Player_HighScore;
     int Int_Player_Health;
 
     [SerializeField]
     Text Text_player_score;
+    [SerializeField]
+    Text Text_player_highscore;
     [SerializeField]
     Text Text_player_health;
 
@@ -19,6 +22,8 @@ public class Player_UI : MonoBehaviour {
     {
         player_score = GameObject.FindObjectOfType<Player_Score>();
         player_health = GameObject.FindObjectOfType<Player_Health>();
+
+        Int_Player_HighScore = PlayerPrefs.GetInt("HighScore");
     }
     void Update()
     {
@@ -33,6 +38,7 @@ public class Player_UI : MonoBehaviour {
     void Update_UI()
     {
         Text_player_score.text = "Player Score: "+ Int_Player_Score.ToString();
+        Text_player_highscore.text = "Player Highscore: " + Int_Player_HighScore.ToString();
         Text_player_health.text = "Player Health: " + Int_Player_Health.ToString();
     }
 }
