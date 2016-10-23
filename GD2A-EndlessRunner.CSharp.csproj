@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\Spawning\House_Spawner.cs" />
     <Compile Include="Assets\Scripts\Spawning\Objects_Spawner.cs" />
     <Compile Include="Assets\Scripts\Spawning\SpawningBehaviour.cs" />
+    <Compile Include="Assets\Scripts\UI\Buttons.cs" />
     <Compile Include="Assets\Scripts\UI\HideUI.cs" />
     <Compile Include="Assets\Scripts\UI\Main_Menu.cs" />
     <Compile Include="Assets\Scripts\UI\Player_UI.cs" />

@@ -12,18 +12,14 @@ public class Objects_Spawner : SpawningBehaviour {
     public bool _spawnable = false;
     [SerializeField]
     Transform[] spawnPointOneTime;
+    float spawnTime = 2f;
 
     void Start()
     {
         SpawnOnce();
+        InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
-    void Update()
-    {
-        if (_spawnable)
-        {
-            Spawn();
-        }
-    }
+    
     void SpawnOnce()
     {
         for (int i = 0; i < spawnPointOneTime.Length; i++)
@@ -35,14 +31,7 @@ public class Objects_Spawner : SpawningBehaviour {
     void Spawn()
     {
         _spawnable = false;
+        Debug.Log("Spawned a object");
         ObjectSpawner(Objects, spawnPoints);
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Spawn_Object")
-        {
-            Spawn();
-        }
     }
 }

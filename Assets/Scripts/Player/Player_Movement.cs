@@ -44,7 +44,7 @@ public class Player_Movement : InputBehaviour {
 
     void CheckKeyStatement()
     {
-        
+
         // jump
         if (jump || controller_up)
         {
@@ -53,27 +53,29 @@ public class Player_Movement : InputBehaviour {
                 _rigidBody2D.velocity = new Vector2(_rigidBody2D.velocity.x, 0);
                 _rigidBody2D.AddForce(Vector2.up * jumpPower * 2);
                 _audioManager.Play_Player_Jump_Sound();
-            }          
+            }
         }
-        if(down || controller_down)
+        if (down || controller_down)
         {
             _rigidBody2D.AddForce(-Vector2.up * jumpPower * 2);
         }
-        
+        _rigidBody2D.AddForce(Vector2.left * player_speed * 2);
     }
-
+    
     void CheckRaycast()
     {
         Debug.DrawLine(this.transform.position, groundedEnd.position, Color.green);
 
         grounded = Physics2D.Linecast(this.transform.position, groundedEnd.position, 1 << LayerMask.NameToLayer("Ground"));
     }
+    
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag == "Player_play_area")
+        if (other.gameObject.tag == "Player_play_area")
         {
             _rigidBody2D.velocity = Vector2.zero;
         }
     }
+
 }

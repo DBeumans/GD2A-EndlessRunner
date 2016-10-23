@@ -87,7 +87,7 @@ public class InputBehaviour : MonoBehaviour {
         leftRo = Input.GetKey(LeftRo);
         right = Input.GetKey(Right);
         left = Input.GetKey(Left);
-        jump = Input.GetKey(Jump);
+        jump = Input.GetKeyDown(Jump);
         escapeButton = Input.GetKey(EscapeButton);
         down = Input.GetKey(Down);
 

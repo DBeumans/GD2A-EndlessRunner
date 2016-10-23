@@ -17,9 +17,6 @@ public class Player_Health : MonoBehaviour {
         {
             player_Health -= 100;
         }
-        if(other.gameObject.tag=="Player_play_area")
-        {
-            player_Health -= 100;
-        }
+        
     }
 }

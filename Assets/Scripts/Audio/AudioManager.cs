@@ -23,7 +23,8 @@ public class AudioManager : MonoBehaviour {
 
         audio_Source = gameObject.GetComponent<AudioSource>();
 
-        PlayRandomStartSong();
+        //PlayRandomStartSong();
+        PlayNextSong();
         
     }
     public void Play_Pickup_Sound()
@@ -35,11 +36,34 @@ public class AudioManager : MonoBehaviour {
     {
         audio_Source.PlayOneShot(player_jump);
     }
-
+    /*
     void PlayRandomStartSong()
     {
         randomSong = Random.Range(0, background_Songs.Length);
         audio_Source.PlayOneShot(background_Songs[randomSong]);
     }
+    */
+    void PlayNextSong()
+    {
+        audio_Source.clip = background_Songs[Random.Range(0, background_Songs.Length)];
+        audio_Source.Play();
+        Invoke("PlayNextSong", audio_Source.clip.length);
+    }
+
+    public void MuteAudio(bool value)
+    {
+        if(value)
+        {
+            audio_Source.Pause();
+        }
+        else
+        {
+            audio_Source = gameObject.GetComponent<AudioSource>();
+            audio_Source.UnPause();
+        }
+        
+    }
+
+    
 
 }

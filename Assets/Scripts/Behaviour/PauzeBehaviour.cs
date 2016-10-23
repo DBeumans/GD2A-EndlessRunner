@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PauzeBehaviour : MonoBehaviour {
 
@@ -9,8 +10,7 @@ public class PauzeBehaviour : MonoBehaviour {
     [SerializeField]
     GameObject _pauze_Panel;
 
-    Animator _animator;
-
+    AudioManager _audioManager;
     // Awake function is here to prevent the script turning off bug.
     void Awake()
     {
@@ -21,13 +21,16 @@ public class PauzeBehaviour : MonoBehaviour {
 
     void Start()
     {
-        _animator = gameObject.GetComponent<Animator>();
+        _audioManager = GameObject.FindObjectOfType<AudioManager>();
+    
     }
 
     void Update()
     {
         KeysState();
+        CheckGamePauze();
     }
+    
 
     void KeysState()
     {
@@ -53,8 +56,6 @@ public class PauzeBehaviour : MonoBehaviour {
             _pauze_Panel.SetActive(true);
             
             Time.timeScale = 0;
-            Animations();
-
         }
         if(!value)
         {
@@ -63,19 +64,27 @@ public class PauzeBehaviour : MonoBehaviour {
             _pauze_Panel.SetActive(false);
             
             Time.timeScale = 1;
-            Animations();
         }
     }
-
-    void Animations()
+    public void BackToMainMenu()
     {
-        if(_isPauzed)
+        SceneManager.LoadScene(0);
+    }
+
+    public void UnpauzeGame()
+    {
+        PauzeGame(false);
+    }
+
+    void CheckGamePauze()
+    {
+        if(!_isPauzed)
         {
-            _animator.SetBool("Pauze_Open", true);
+            _audioManager.MuteAudio(false);
         }
         else
         {
-            _animator.SetBool("Pauze_Open", false);
+            _audioManager.MuteAudio(true);
         }
     }
 }
