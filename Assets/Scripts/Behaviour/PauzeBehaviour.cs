@@ -11,6 +11,8 @@ public class PauzeBehaviour : MonoBehaviour {
     GameObject _pauze_Panel;
 
     AudioManager _audioManager;
+
+    HideUI hide_UI;
     // Awake function is here to prevent the script turning off bug.
     void Awake()
     {
@@ -22,7 +24,8 @@ public class PauzeBehaviour : MonoBehaviour {
     void Start()
     {
         _audioManager = GameObject.FindObjectOfType<AudioManager>();
-    
+        hide_UI = gameObject.GetComponent<HideUI>();
+        _pauze_Panel.SetActive(false);
     }
 
     void Update()
@@ -54,7 +57,7 @@ public class PauzeBehaviour : MonoBehaviour {
             // Set Game To Pauze State.
             _isPauzed = true;
             _pauze_Panel.SetActive(true);
-            
+            hide_UI.Hide_UI_Elements(true);
             Time.timeScale = 0;
         }
         if(!value)
@@ -62,7 +65,7 @@ public class PauzeBehaviour : MonoBehaviour {
             // Set Game To Unpauze State.
             _isPauzed = false;
             _pauze_Panel.SetActive(false);
-            
+            hide_UI.Hide_UI_Elements(false);
             Time.timeScale = 1;
         }
     }

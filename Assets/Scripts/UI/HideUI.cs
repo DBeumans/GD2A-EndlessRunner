@@ -15,8 +15,16 @@ public class HideUI : MonoBehaviour {
         }
     }
 
-    public void Hide_UI_Elements()
+    public void Hide_UI_Elements(bool value)
     {
-        UI_Element.SetActive(false);
+        if(value)
+        {
+            UI_Element.SetActive(false);
+        }
+        else
+        {
+            UI_Element.SetActive(true);
+        }
+        
     }
 }
