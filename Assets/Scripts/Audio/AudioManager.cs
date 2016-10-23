@@ -8,6 +8,9 @@ public class AudioManager : MonoBehaviour {
     [SerializeField]
     AudioClip[] background_Songs;
 
+    [SerializeField]
+    AudioClip player_jump;
+
     Player_Color player_Color;
 
     AudioSource audio_Source;
@@ -26,6 +29,11 @@ public class AudioManager : MonoBehaviour {
     public void Play_Pickup_Sound()
     {
         audio_Source.PlayOneShot(object_Pickup_Sound);
+    }
+
+    public void Play_Player_Jump_Sound()
+    {
+        audio_Source.PlayOneShot(player_jump);
     }
 
     void PlayRandomStartSong()

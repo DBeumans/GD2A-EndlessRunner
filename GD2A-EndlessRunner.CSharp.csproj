@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\Background\InfiniteScroll_Background.cs" />
     <Compile Include="Assets\Scripts\Behaviour\ColorBehaviour.cs" />
     <Compile Include="Assets\Scripts\Behaviour\InputBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Behaviour\LoadBehaviour.cs" />
     <Compile Include="Assets\Scripts\Behaviour\PauzeBehaviour.cs" />
     <Compile Include="Assets\Scripts\Behaviour\SaveBehaviour.cs" />
     <Compile Include="Assets\Scripts\House\House_Movement.cs" />

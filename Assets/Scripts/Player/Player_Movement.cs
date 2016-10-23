@@ -15,6 +15,8 @@ public class Player_Movement : InputBehaviour {
 
     Rigidbody2D _rigidBody2D;
 
+    AudioManager _audioManager;
+
     bool grounded = false;
     Player_Movement _playerMovement; // There is a bug that the player_movement script turns off when the game starts, this is to turn it back on again.
     //The player_movement script on the player turns off because of the arduino sopport, when there is no arduino connected it causes a bug, i dont know how, that the scripts turns off. To prevent it we are turning the script back on.
@@ -28,6 +30,7 @@ public class Player_Movement : InputBehaviour {
     {
         
         _rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
+        _audioManager = GameObject.FindObjectOfType<AudioManager>();
        
     }
 	
@@ -49,6 +52,7 @@ public class Player_Movement : InputBehaviour {
             {
                 _rigidBody2D.velocity = new Vector2(_rigidBody2D.velocity.x, 0);
                 _rigidBody2D.AddForce(Vector2.up * jumpPower * 2);
+                _audioManager.Play_Player_Jump_Sound();
             }          
         }
         if(down || controller_down)

@@ -6,6 +6,7 @@ public class Player_UI : MonoBehaviour {
 
     Player_Score player_score;
     Player_Health player_health;
+    LoadBehaviour load_behaviour;
 
     int Int_Player_Score;
     int Int_Player_HighScore;
@@ -22,8 +23,9 @@ public class Player_UI : MonoBehaviour {
     {
         player_score = GameObject.FindObjectOfType<Player_Score>();
         player_health = GameObject.FindObjectOfType<Player_Health>();
+        load_behaviour = GameObject.FindObjectOfType<LoadBehaviour>();
 
-        Int_Player_HighScore = PlayerPrefs.GetInt("HighScore");
+        Int_Player_HighScore = load_behaviour.highscore;
     }
     void Update()
     {
