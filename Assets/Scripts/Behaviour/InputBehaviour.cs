@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.IO.Ports;
+
 
 public class InputBehaviour : MonoBehaviour {
     
@@ -28,8 +28,8 @@ public class InputBehaviour : MonoBehaviour {
     public KeyCode Controller_Up;
     public KeyCode Controller_Down;
 
-    private bool portSet; 
-    private SerialPort serialP = new SerialPort("COM7" , 9600);
+   // private bool portSet; 
+    //private SerialPort serialP = new SerialPort("COM7" , 9600);
     
     private void Awake() {
         /*for(float i = 1; i <= 10; i++) {
